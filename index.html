@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Drift · Design QA for live web apps</title>
+  <meta name="description" content="Drift is a Chrome extension that checks a live web app against your design system and lists every place it drifts, with screenshots.">
+  <link rel="icon" href="icon128.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page">
+    <div class="brand"><img src="icon128.png" width="24" height="24" alt=""><span>Drift</span></div>
+    <h1>See where the build drifts from your design system.</h1>
+    <p class="lede">Drift is a Chrome extension for product designers. Pick any section of a live web app, and Drift lists every place where its rendered styles don't match your design tokens, each with a screenshot and a plain-language comment.</p>
+
+    <h2>How it works</h2>
+    <ol>
+      <li><b>Add your design system once.</b> Colours (light and dark), typography, spacing, radius and component specs, as JSON from your Figma export: plain, Tokens Studio or W3C design tokens.</li>
+      <li><b>Pick a section</b> of the page. Clicks never reach the app while you pick, so a stray click can't place an order.</li>
+      <li><b>Run the diagnosis.</b> A rule-based check compares every colour, font, padding and radius with your tokens. With your own Anthropic API key, Claude then reviews the findings, dismisses false alarms and catches component issues, such as a toggle built at the wrong size.</li>
+      <li><b>Share it.</b> Each issue comes with a cropped screenshot, the found and expected values, the token to use and a fix for developers. Copy it as text, download one HTML report, or add it to a Google Doc, one report below the other.</li>
+    </ol>
+
+    <h2>What it checks</h2>
+    <ul>
+      <li>Colours outside the current theme's palette, including near misses that look hardcoded</li>
+      <li>Dark-theme colours used in light mode, and the reverse</li>
+      <li>Font families, sizes, weights and line heights off the type scale</li>
+      <li>Padding, gaps and corner radii off the spacing and radius scales</li>
+      <li>Components that don't match their specs (with Claude)</li>
+    </ul>
+
+    <h2>Privacy</h2>
+    <p>Drift has no server and no analytics. Settings and your API key stay in Chrome on your computer. Page data goes to Anthropic only if you add your own key, with digits masked in text by default. Google access is limited to the files Drift creates, unless you choose your own doc. <a href="privacy.html">Read the privacy policy</a>.</p>
+
+    <footer>
+      <a href="privacy.html">Privacy policy</a> · <a href="mailto:vrundar.p19@gmail.com">vrundar.p19@gmail.com</a>
+    </footer>
+  </main>
+</body>
+</html>
