@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Drift · Privacy policy</title>
+  <meta name="description" content="What the Drift Chrome extension reads, where it goes, and what Drift does with your Google data.">
+  <link rel="icon" href="icon128.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page">
+    <a class="brand" href="./"><img src="icon128.png" width="24" height="24" alt=""><span>Drift</span></a>
+    <h1>Privacy policy</h1>
+    <p class="lede">Last updated 30 October 2026.</p>
+
+    <p>Drift is a Chrome extension for designers. It checks a section of a web page you're viewing against your design system and lists where the page's styles drift from it. Drift has no server of its own, no accounts, no analytics and no tracking. This page explains exactly what it reads and where that data goes.</p>
+
+    <h2>What Drift reads</h2>
+    <p>Only when you pick a section and click <b>Run the diagnosis</b>, Drift reads from that section of the page:</p>
+    <ul>
+      <li>the computed styles of its elements (colours, fonts, sizes, spacing, corner radius),</li>
+      <li>up to 40 characters of visible text per group of elements, with every digit replaced by <code>#</code> unless you turn masking off (password fields are never read),</li>
+      <li>screenshots of the section and of each element with a problem,</li>
+      <li>the page's hostname (never the full address or query string).</li>
+    </ul>
+    <p>Drift doesn't read pages you haven't run it on, your browsing history, or anything outside the section you picked.</p>
+
+    <h2>What stays on your computer</h2>
+    <p>Your settings, design-system files, Claude API key and Google connection status are stored in Chrome's local extension storage on your computer. They are never synced to other devices and never sent to the developer. Results and screenshots are kept in memory only while the Drift panel is open.</p>
+
+    <h2>What is sent, and to whom</h2>
+    <ul>
+      <li><b>Anthropic (Claude):</b> only if you add your own Anthropic API key. Drift then sends the hostname, the theme, the element styles and masked text described above, the rule-based findings, your design-system tokens and component specs, and, if <b>Send section screenshot</b> is on, a screenshot of the section. It goes directly from your browser to Anthropic's API under your key and is handled under <a href="https://www.anthropic.com/legal/privacy">Anthropic's privacy policy</a>. Screenshots show the real numbers on screen; masking applies to text only.</li>
+      <li><b>Google:</b> only if you connect Google Drive and save a report, as described below.</li>
+    </ul>
+    <p>The developer of Drift receives none of this data. Nothing is sold, shared with advertisers or used for any purpose other than the features you use.</p>
+
+    <h2>Google user data</h2>
+    <p>When you click <b>Connect Google Drive</b>, Drift asks Google for permission to:</p>
+    <ul>
+      <li><b>See, edit, create and delete only the Google Drive files you use with Drift</b> (<code>drive.file</code>). Drift uses this to create a <b>Drift reports</b> folder and a <b>Drift design QA</b> doc, to add each saved report to that doc, and to read your account's email address to show which account is connected. To get screenshots into the doc, each save uploads a temporary file containing only that report's screenshots, uses it to place them, and then deletes it.</li>
+      <li><b>See, edit, create and delete your Google Docs documents</b> (<code>documents</code>), only if you choose <b>Use my own doc</b> and paste a doc link. Drift uses this to read that doc's title and to add your reports to the bottom of it. It doesn't open or change any other doc.</li>
+    </ul>
+    <p>Google data is used only to save your reports where you asked. It is never sent to Anthropic, the developer or anyone else, and it isn't stored outside your own Google account, apart from the folder and doc IDs (and the title of a doc you pasted) that Drift keeps in local storage so it knows where to save next time.</p>
+    <p>Drift's use and transfer of information received from Google APIs adheres to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements.</p>
+
+    <h2>Your control</h2>
+    <ul>
+      <li><b>Disconnect</b> in Drift's setup page forgets Drift's Google access on your computer and revokes it at Google. You can also remove Drift at <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>.</li>
+      <li>Removing the extension from Chrome deletes everything Drift stored on your computer.</li>
+      <li>Reports saved to Google Docs are your files; delete or move them in Google Drive like any other doc.</li>
+    </ul>
+
+    <h2>Changes and contact</h2>
+    <p>If this policy changes, the new version will be posted on this page with a new date. Questions: <a href="mailto:vrundar.p19@gmail.com">vrundar.p19@gmail.com</a>.</p>
+
+    <footer><a href="./">Drift home</a></footer>
+  </main>
+</body>
+</html>
